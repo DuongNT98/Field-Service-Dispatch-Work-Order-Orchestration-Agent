@@ -1,0 +1,15 @@
+# Runtime parameters — loaded by AgentRegistry, passed as Graph(config=...).
+# This is a SEPARATE file from config/agent.yaml (the static manifest): agent.yaml
+# is AgentRegistry's discovery entry point, this file is the agent's own runtime
+# config, keyed by whatever your Graph/node code reads via self.config.get(...).
+# See the framework's manifest documentation for the agent.yaml / config.yaml split of responsibility.
+
+max_retry: 3
+timeout_s: 30
+
+# No HITL (propagate_hitl = False on FieldServiceGraphNode — this pipeline has
+# no interrupt()) and no cross-invocation memory, so both stay unset/false.
+# memory_enabled: false
+# hitl:
+#   enabled: false
+#   max_hitl: 5
